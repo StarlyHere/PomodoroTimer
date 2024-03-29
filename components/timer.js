@@ -6,8 +6,8 @@ import SettingsButton from './SettingsButton';
 import { useContext, useState, useEffect, useRef} from 'react';
 import SettingsContext from '@/pages/SettingsContext';
 
-const red = '#f54e4e';
-const green = '#4aec8c';
+const purple = '#430A5D';
+const pink = '#CECE5A';
 
 function Timer() {
   const settingsInfo = useContext(SettingsContext);
@@ -50,7 +50,7 @@ function Timer() {
       }
 
       tick();
-    },100);
+    },1000);
 
     return () => clearInterval(interval);
   }, [settingsInfo]);
@@ -71,7 +71,7 @@ function Timer() {
         text={minutes + ':' + seconds}
         styles={buildStyles({
         textColor:'#fff',
-        pathColor:mode === 'work' ? red : green,
+        pathColor:mode === 'work' ? purple : pink,
         tailColor:'rgba(255,255,255,.2)',
       })} />
       <div style={{marginTop:'20px'}}>
